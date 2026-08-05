@@ -297,7 +297,7 @@ function ProductModal({ product, onClose, onSaved }: { product: Product | null, 
               
               <div>
                 <label className="block text-xs text-zinc-400 mb-1.5">Categoría</label>
-                <select value={formData.category} onChange={e => setFormData({...formData, category: e.target.value})} className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-red focus:outline-none transition-colors appearance-none">
+                <select value={formData.category} onChange={e => setFormData({...formData, category: e.target.value as "Res" | "Cerdo" | "Pollo" | "Especiales"})} className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-red focus:outline-none transition-colors appearance-none">
                   <option value="Res">Res</option>
                   <option value="Cerdo">Cerdo</option>
                   <option value="Pollo">Pollo</option>
@@ -306,7 +306,7 @@ function ProductModal({ product, onClose, onSaved }: { product: Product | null, 
               </div>
               <div>
                 <label className="block text-xs text-zinc-400 mb-1.5">Unidad de Venta</label>
-                <select value={formData.unit} onChange={e => setFormData({...formData, unit: e.target.value})} className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-red focus:outline-none transition-colors appearance-none">
+                <select value={formData.unit} onChange={e => setFormData({...formData, unit: e.target.value as "KG" | "PZA" | "LBS"})} className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-red focus:outline-none transition-colors appearance-none">
                   <option value="KG">Kilogramo (KG)</option>
                   <option value="PZA">Pieza (PZA)</option>
                   <option value="LBS">Libra (LBS)</option>
