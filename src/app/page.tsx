@@ -71,7 +71,7 @@ export default function Home() {
               className="text-xl text-zinc-300 font-light"
             >
               Contamos con los mejores cortes al mejor precio.<br/>
-              <span className="text-brand-red font-medium">Menudeo desde 1 kilo</span>, variedad en vitrina lista para el asador🔥
+              <span className="text-brand-red font-medium">Menudeo desde 1 kilo</span>, variedad en vitrina lista para el asador
             </motion.p>
           </div>
         </section>
