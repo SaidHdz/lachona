@@ -41,7 +41,7 @@ export default function Home() {
     });
 
   return (
-    <div className="min-h-screen flex flex-col bg-brand-dark selection:bg-brand-red/30">
+    <div className="min-h-[100dvh] flex flex-col bg-brand-dark selection:bg-brand-red/30">
       <Header currentTier={currentTier} onTierChange={setCurrentTier} />
 
       <main className="flex-grow w-full flex flex-col">

@@ -14,7 +14,7 @@ export default function AdminPage() {
       .catch(() => setIsAuthenticated(false));
   }, []);
 
-  if (isAuthenticated === null) return <div className="min-h-screen flex items-center justify-center bg-brand-dark text-white">Cargando...</div>;
+  if (isAuthenticated === null) return <div className="min-h-[100dvh] flex items-center justify-center bg-brand-dark text-white">Cargando...</div>;
 
   return isAuthenticated ? (
     <AdminDashboard onLogout={() => setIsAuthenticated(false)} />
@@ -55,7 +55,7 @@ function AdminLogin({ onLogin }: { onLogin: () => void }) {
   };
 
   return (
-    <div className="min-h-screen bg-brand-dark flex items-center justify-center p-4">
+    <div className="min-h-[100dvh] bg-brand-dark flex items-center justify-center p-4">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ function AdminDashboard({ onLogout }: { onLogout: () => void }) {
   };
 
   return (
-    <div className="min-h-screen bg-brand-dark p-4 md:p-6">
+    <div className="min-h-[100dvh] bg-brand-dark p-4 md:p-6">
       <div className="max-w-5xl mx-auto">
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8 glass-panel p-5 rounded-xl border border-white/10">
           <div>
