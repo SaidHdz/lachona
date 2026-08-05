@@ -41,38 +41,68 @@ export default function Home() {
     });
 
   return (
-    <div className="min-h-screen flex flex-col bg-brand-dark selection:bg-brand-red/30">
+    <div className="min-h-screen flex flex-col bg-transparent selection:bg-brand-red/30">
       <Header currentTier={currentTier} onTierChange={setCurrentTier} />
 
       <main className="flex-grow w-full flex flex-col">
         {/* Hero Section */}
-        <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/90 to-brand-dark/40 z-10" />
-            <img 
-              src="https://images.unsplash.com/photo-1607116176195-b81b1f41f536?q=80&w=2000&auto=format&fit=crop" 
-              alt="Fondo Carniceria" 
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <section className="relative w-full min-h-[70vh] md:min-h-[85vh] py-12 md:py-16 overflow-hidden px-4 md:px-8 bg-transparent flex items-center">
           
-          <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
-            >
-              LA <span className="text-brand-red">CHONA</span>
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-zinc-300 font-light"
-            >
-              Contamos con los mejores cortes al mejor precio.<br/>
-              <span className="text-brand-red font-medium">Menudeo desde 1 kilo</span>, variedad en vitrina lista para el asador
-            </motion.p>
+          {/* Mobile Background Image */}
+          <div className="absolute inset-0 z-0 md:hidden overflow-hidden">
+            <img 
+              src="/images/hanging_meat.jpg" 
+              alt="Fondo La Chona" 
+              className="w-full h-full object-cover blur-[3px] scale-110 opacity-70"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-[#0a0a0a]" />
+          </div>
+
+          <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-12 relative z-10">
+            
+            {/* Desktop: Hanging Meat Image (Hidden on Mobile) */}
+            <div className="hidden md:flex w-full md:w-1/2 justify-end shrink-0">
+              <div className="relative w-full max-w-[450px] aspect-[2/3] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
+                {/* Vignette */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 z-10 pointer-events-none" />
+                <img 
+                  src="/images/hanging_meat.jpg" 
+                  alt="Corte Premium La Chona" 
+                  className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
+                />
+              </div>
+            </div>
+            
+            {/* Right/Top: Text */}
+            <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center">
+              <motion.h1 
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-7xl sm:text-8xl md:text-8xl lg:text-[9rem] font-black text-white mb-2 md:mb-6 tracking-tighter uppercase"
+              >
+                LA
+                <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-red to-red-600">
+                  CHONA
+                </span>
+              </motion.h1>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+                className="mt-6 md:mt-6 border-t-2 border-brand-red md:border-t-0 md:border-l-4 pt-6 md:pt-0 md:pl-6 max-w-sm mx-auto md:mx-0"
+              >
+                <p className="text-lg sm:text-xl md:text-2xl text-zinc-200 font-light leading-tight md:leading-normal">
+                  Contamos con los mejores cortes al mejor precio.
+                </p>
+                <p className="text-base sm:text-lg md:text-xl text-zinc-400 font-light mt-3 md:mt-4 leading-relaxed">
+                  <span className="text-brand-red font-semibold">Menudeo desde 1 kilo</span>, variedad en vitrina lista para el asador.
+                </p>
+              </motion.div>
+            </div>
+            
           </div>
         </section>
 
@@ -87,12 +117,9 @@ export default function Home() {
           />
 
           <div className="flex-1">
-            <div className="mb-8 border-b border-white/10 pb-6">
-              <h2 className="text-3xl font-bold text-white mb-3">Contamos con los mejores cortes al mejor precio</h2>
-              <p className="text-zinc-400 mb-2">
-                Menudeo desde 1 kilo, variedad en vitrina lista para el asador.
-              </p>
-              <p className="text-sm text-zinc-500">
+            <div className="mb-8 border-b border-white/10 pb-4">
+              <h2 className="text-2xl font-bold text-white mb-2">Catálogo de Cortes</h2>
+              <p className="text-sm text-zinc-400">
                 Mostrando precios base de <strong className="text-brand-red uppercase">{currentTier.replace('_', ' ')}</strong>
               </p>
             </div>
@@ -100,7 +127,7 @@ export default function Home() {
             {isLoading ? (
               <div className="text-center text-zinc-500 py-20">Cargando cortes...</div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
                 {filteredProducts.map((product, index) => (
                   <ProductCard 
                     key={product.id}

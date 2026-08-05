@@ -12,6 +12,7 @@ export interface Product {
   };
   unit: 'KG' | 'LBS' | 'PZA';
   imageUrl: string;
+  imageUrls?: string[];
   isPopular?: boolean;
 }
 
@@ -28,6 +29,7 @@ export const mockProducts: Product[] = [
     },
     unit: 'KG',
     imageUrl: '/images/top_sirloin.jpg',
+    imageUrls: ['/images/top_sirloin_1_1785972502109.jpg', '/images/top_sirloin_2_1785972510441.jpg'],
     isPopular: true
   },
   {
@@ -42,6 +44,7 @@ export const mockProducts: Product[] = [
     },
     unit: 'KG',
     imageUrl: '/images/diezmillo.jpg',
+    imageUrls: ['/images/diezmillo_1_1785972517744.jpg', '/images/diezmillo_2_1785972525912.jpg'],
     isPopular: true
   },
   {
@@ -55,7 +58,8 @@ export const mockProducts: Product[] = [
       mayoreo: 155.00
     },
     unit: 'KG',
-    imageUrl: '/images/chuleton.jpg'
+    imageUrl: '/images/chuleton.jpg',
+    imageUrls: ['/images/chuleton_1_1785972533560.jpg', '/images/chuleton_2_1785972540804.jpg']
   },
   {
     id: 'costilla-simple',
@@ -68,7 +72,8 @@ export const mockProducts: Product[] = [
       mayoreo: 99.90
     },
     unit: 'KG',
-    imageUrl: '/images/costilla_simple.jpg'
+    imageUrl: '/images/costilla_simple.jpg',
+    imageUrls: ['/images/costilla_simple_1_1785972548005.jpg', '/images/costilla_simple_2_1785972555385.jpg']
   },
   {
     id: 'alitas-pollo',
@@ -81,7 +86,8 @@ export const mockProducts: Product[] = [
       mayoreo: 79.90
     },
     unit: 'KG',
-    imageUrl: '/images/alitas_pollo.jpg'
+    imageUrl: '/images/alitas_pollo.jpg',
+    imageUrls: ['/images/alitas_pollo_1_1785972568839.jpg', '/images/alitas_pollo_2_1785972575882.jpg']
   },
   {
     id: 't-bone',
@@ -94,7 +100,8 @@ export const mockProducts: Product[] = [
       mayoreo: 159.50
     },
     unit: 'KG',
-    imageUrl: '/images/t_bone.jpg'
+    imageUrl: '/images/t_bone.jpg',
+    imageUrls: ['/images/t_bone.jpg', '/images/t_bone.jpg']
   },
   {
     id: 'costilla-cargada',
@@ -107,7 +114,8 @@ export const mockProducts: Product[] = [
       mayoreo: 185.00
     },
     unit: 'KG',
-    imageUrl: '/images/costilla_cargada.jpg'
+    imageUrl: '/images/costilla_cargada.jpg',
+    imageUrls: ['/images/costilla_cargada.jpg', '/images/costilla_cargada.jpg']
   },
   {
     id: 'paleta',
@@ -120,7 +128,8 @@ export const mockProducts: Product[] = [
       mayoreo: 129.90
     },
     unit: 'KG',
-    imageUrl: '/images/paleta.jpg'
+    imageUrl: '/images/paleta.jpg',
+    imageUrls: ['/images/paleta.jpg', '/images/paleta.jpg']
   }
 ];
 

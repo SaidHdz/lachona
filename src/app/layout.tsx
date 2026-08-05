@@ -19,9 +19,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="dark">
-      <body className={`${inter.className} bg-brand-dark text-foreground antialiased`}>
+      <body className={`${inter.className} text-foreground antialiased min-h-screen relative bg-brand-dark`}>
+        
+        {/* Global smoky/textured background from the hero image */}
+        <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+          {/* Base dark color */}
+          <div className="absolute inset-0 bg-brand-dark/70 z-10"></div>
+          {/* Gradients to keep the top darker for the header */}
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-dark/60 to-brand-dark z-10"></div>
+          {/* The image providing the texture */}
+          <img 
+            src="/images/hanging_meat.jpg" 
+            alt="" 
+            className="w-full h-full object-cover opacity-40 blur-[15px] scale-110 mix-blend-luminosity"
+          />
+        </div>
+
         <CartProvider>
-          {children}
+          <div className="relative z-0">
+            {children}
+          </div>
           <CartSidebar />
         </CartProvider>
       </body>
