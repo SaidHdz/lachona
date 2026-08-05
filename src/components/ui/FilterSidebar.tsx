@@ -37,17 +37,16 @@ export function FilterSidebar({
       {/* Sidebar Content (Hidden on mobile unless toggled, always visible on desktop) */}
       <aside className={`w-full md:w-64 flex-shrink-0 flex-col gap-8 glass-panel p-6 rounded-2xl h-fit sticky top-28 ${mobileFiltersOpen ? 'flex' : 'hidden md:flex'}`}>
         <div>
-          <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-brand-red inline-block"></span>
+          <h3 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-4 flex items-center gap-2">
             Categorías
           </h3>
           <div className="space-y-2">
             <button
               onClick={() => onSelectCategory(null)}
-              className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${
+              className={`block w-full text-left px-4 py-2 rounded-lg text-sm transition-all duration-300 ${
                 selectedCategory === null
-                  ? "bg-white/10 text-white font-medium border-l-2 border-brand-red"
-                  : "text-zinc-400 hover:text-white hover:bg-white/5 border-l-2 border-transparent"
+                  ? "bg-white/10 text-white font-medium shadow-[0_0_15px_rgba(255,255,255,0.03)]"
+                  : "text-zinc-400 hover:text-white hover:bg-white/5 hover:translate-x-1"
               }`}
             >
               Todos los cortes
@@ -56,10 +55,10 @@ export function FilterSidebar({
               <button
                 key={cat}
                 onClick={() => onSelectCategory(cat)}
-                className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${
+                className={`block w-full text-left px-4 py-2 rounded-lg text-sm transition-all duration-300 ${
                   selectedCategory === cat
-                    ? "bg-white/10 text-white font-medium border-l-2 border-brand-red"
-                    : "text-zinc-400 hover:text-white hover:bg-white/5 border-l-2 border-transparent"
+                    ? "bg-white/10 text-white font-medium shadow-[0_0_15px_rgba(255,255,255,0.03)]"
+                    : "text-zinc-400 hover:text-white hover:bg-white/5 hover:translate-x-1"
                 }`}
               >
                 {cat}
@@ -69,27 +68,26 @@ export function FilterSidebar({
         </div>
 
         <div className="pt-6 border-t border-white/5">
-          <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-brand-red inline-block"></span>
+          <h3 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-4 flex items-center gap-2">
             Ordenamiento
           </h3>
           <div className="space-y-2">
             <button
               onClick={() => onPriceOrderChange('asc')}
-              className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${
+              className={`block w-full text-left px-4 py-2 rounded-lg text-sm transition-all duration-300 ${
                 priceOrder === 'asc'
-                  ? "bg-white/10 text-white font-medium"
-                  : "text-zinc-400 hover:text-white hover:bg-white/5"
+                  ? "bg-white/10 text-white font-medium shadow-[0_0_15px_rgba(255,255,255,0.03)]"
+                  : "text-zinc-400 hover:text-white hover:bg-white/5 hover:translate-x-1"
               }`}
             >
               Precio: Menor a Mayor
             </button>
             <button
               onClick={() => onPriceOrderChange('desc')}
-              className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${
+              className={`block w-full text-left px-4 py-2 rounded-lg text-sm transition-all duration-300 ${
                 priceOrder === 'desc'
-                  ? "bg-white/10 text-white font-medium"
-                  : "text-zinc-400 hover:text-white hover:bg-white/5"
+                  ? "bg-white/10 text-white font-medium shadow-[0_0_15px_rgba(255,255,255,0.03)]"
+                  : "text-zinc-400 hover:text-white hover:bg-white/5 hover:translate-x-1"
               }`}
             >
               Precio: Mayor a Menor
