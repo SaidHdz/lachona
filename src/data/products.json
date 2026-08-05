@@ -1,0 +1,108 @@
+[
+  {
+    "id": "top-sirloin",
+    "name": "Top Sirloin",
+    "category": "Res",
+    "description": "Corte magro y jugoso, excelente para asar o a la plancha.",
+    "prices": {
+      "menudeo": 209.9,
+      "medio_mayoreo": 195,
+      "mayoreo": 185
+    },
+    "unit": "KG",
+    "imageUrl": "/images/top-sirloin_1785948095944_1000139721.jpg",
+    "isPopular": true
+  },
+  {
+    "id": "diezmillo",
+    "name": "Diezmillo",
+    "category": "Res",
+    "description": "Corte con buen marmoleo, ideal para asados familiares y tacos.",
+    "prices": {
+      "menudeo": 189.9,
+      "medio_mayoreo": 179.9,
+      "mayoreo": 169.9
+    },
+    "unit": "KG",
+    "imageUrl": "/images/diezmillo.jpg",
+    "isPopular": true
+  },
+  {
+    "id": "chuleton",
+    "name": "Chuletón",
+    "category": "Res",
+    "description": "Corte grueso con hueso, que aporta un sabor inigualable al asador.",
+    "prices": {
+      "menudeo": 178.9,
+      "medio_mayoreo": 165,
+      "mayoreo": 155
+    },
+    "unit": "KG",
+    "imageUrl": "/images/chuleton.jpg"
+  },
+  {
+    "id": "costilla-simple",
+    "name": "Costilla Simple",
+    "category": "Cerdo",
+    "description": "Costilla con excelente carne, perfecta para preparaciones BBQ o al horno.",
+    "prices": {
+      "menudeo": 119.9,
+      "medio_mayoreo": 110,
+      "mayoreo": 99.9
+    },
+    "unit": "KG",
+    "imageUrl": "/images/costilla_simple.jpg"
+  },
+  {
+    "id": "alitas-pollo",
+    "name": "Alitas de Pollo",
+    "category": "Pollo",
+    "description": "Perfectas para botanas y grandes eventos.",
+    "prices": {
+      "menudeo": 89.9,
+      "medio_mayoreo": 85,
+      "mayoreo": 79.9
+    },
+    "unit": "KG",
+    "imageUrl": "/images/alitas_pollo.jpg"
+  },
+  {
+    "id": "t-bone",
+    "name": "T-Bone",
+    "category": "Res",
+    "description": "Excelente balance entre filete y lomo, ideal para la parrilla.",
+    "prices": {
+      "menudeo": 179.5,
+      "medio_mayoreo": 169.5,
+      "mayoreo": 159.5
+    },
+    "unit": "KG",
+    "imageUrl": "/images/t_bone.jpg"
+  },
+  {
+    "id": "costilla-cargada",
+    "name": "Costilla Cargada",
+    "category": "Res",
+    "description": "Costilla con abundante carne, excelente sabor y marmoleo.",
+    "prices": {
+      "menudeo": 209.5,
+      "medio_mayoreo": 195,
+      "mayoreo": 185
+    },
+    "unit": "KG",
+    "imageUrl": "/images/costilla_cargada.jpg"
+  },
+  {
+    "id": "paleta",
+    "name": "Paleta",
+    "category": "Cerdo",
+    "description": "Ideal para deshebrar, carnitas o guisos lentos.",
+    "prices": {
+      "menudeo": 149.9,
+      "medio_mayoreo": 139.9,
+      "mayoreo": 129.9
+    },
+    "unit": "KG",
+    "imageUrl": "/images/paleta.jpg"
+  }
+]
