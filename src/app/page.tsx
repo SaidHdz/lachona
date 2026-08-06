@@ -55,25 +55,32 @@ export default function Home() {
               alt="Fondo La Chona" 
               className="w-full h-full object-cover blur-[3px] scale-110 opacity-70"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-[#0a0a0a]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-[#09090b]" />
           </div>
 
-          <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-12 relative z-10">
+          <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-12 relative z-10 pt-10 md:pt-0">
             
-            {/* Desktop: Hanging Meat Image (Hidden on Mobile) */}
-            <div className="hidden md:flex w-full md:w-1/2 justify-end shrink-0">
-              <div className="relative w-full max-w-[450px] aspect-[2/3] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
-                {/* Vignette */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 z-10 pointer-events-none" />
+            {/* Left: Meat Image (Hidden on Mobile, blended on Desktop) */}
+            <div className="hidden md:flex w-full md:w-1/2 justify-start shrink-0">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="relative w-full max-w-[600px] aspect-[4/5] pointer-events-none"
+                style={{ 
+                  maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 75%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 75%)'
+                }}
+              >
                 <img 
                   src="/images/hanging_meat.jpg" 
                   alt="Corte Premium La Chona" 
-                  className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
+                  className="w-full h-full object-cover opacity-90"
                 />
-              </div>
+              </motion.div>
             </div>
-            
-            {/* Right/Top: Text */}
+
+            {/* Right: Text */}
             <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center">
               <motion.h1 
                 initial={{ opacity: 0, x: 20 }}
